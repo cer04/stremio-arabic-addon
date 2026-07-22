@@ -1,0 +1,17 @@
+{
+  "builds": [
+    {
+      "src": "src/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/manifest.json", "dest": "src/index.ts" },
+    { "src": "/catalog/(.*)", "dest": "src/index.ts" },
+    { "src": "/meta/(.*)", "dest": "src/index.ts" },
+    { "src": "/stream/(.*)", "dest": "src/index.ts" },
+    { "src": "/health", "dest": "src/index.ts" },
+    { "src": "/configure", "dest": "src/index.ts" },
+    { "src": "/(.*)", "dest": "src/index.ts" }
+  ]
+}
